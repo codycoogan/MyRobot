@@ -7,9 +7,10 @@ import requests
 import openai
 import os
 import time
-import busio
+# import busio
 
-openai.api_key ="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"
+openai.api_key = os.getenv("OPEN_API_KEY")
+
 
 class SpeechConverter:
 	
@@ -116,6 +117,6 @@ class SpeechConverter:
 					
 sc = SpeechConverter()
 #sc.ask_chat("whats weather in portland")
-sc.write_to_lcd("hi my name is cody and im a famous programmer. how are you today? can i get a woof woof")
+# sc.write_to_lcd("hi my name is cody and im a famous programmer. how are you today? can i get a woof woof")
 while True:
 	print(sc.listen_for_command())
